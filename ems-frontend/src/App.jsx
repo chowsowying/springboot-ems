@@ -1,5 +1,5 @@
 import "./App.css";
-import AddEmployee from "./components/AddEmployee";
+import UpsertEmployee from "./components/UpsertEmployee";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ListEmployee from "./components/ListEmployee";
@@ -13,7 +13,8 @@ function App() {
 				<Routes>
 					<Route path="/" element={<ListEmployee />}></Route>
 					<Route path="/employees" element={<ListEmployee />}></Route>
-					<Route path="/add-employee" element={<AddEmployee />}></Route>
+					<Route path="/add-employee" element={<UpsertEmployee />}></Route>
+					<Route path="/edit-employee/:id" element={<UpsertEmployee />}></Route>
 				</Routes>
 				<Footer />
 			</Router>

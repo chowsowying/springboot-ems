@@ -10,6 +10,10 @@ const ListEmployee = () => {
 		navigate("/add-employee");
 	};
 
+	const handleUpdateEmployee = (empId) => {
+		navigate(`/edit-employee/${empId}`);
+	};
+
 	useEffect(() => {
 		listEmployeesAPI()
 			.then((res) => {
@@ -32,6 +36,7 @@ const ListEmployee = () => {
 						<td>First Name</td>
 						<td>Last Name</td>
 						<td>Email</td>
+						<td>Actions</td>
 					</tr>
 				</thead>
 				<tbody>
@@ -41,6 +46,11 @@ const ListEmployee = () => {
 							<td>{emp.firstName}</td>
 							<td>{emp.lastName}</td>
 							<td>{emp.email}</td>
+							<td>
+								<button className="btn btn-info" onClick={() => handleUpdateEmployee(emp.id)}>
+									Update
+								</button>
+							</td>
 						</tr>
 					))}
 				</tbody>
